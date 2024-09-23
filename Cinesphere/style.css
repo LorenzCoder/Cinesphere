@@ -1,0 +1,193 @@
+/* Allgemeine Styling-Einstellungen für die Seite */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Styling für den Header-Bereich */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Navigation Styling */
+
+nav {
+    position: absolute; /* Absolute Positionierung innerhalb des Banners */
+    top: 10px; /* Abstand vom oberen Rand */
+    right: 10px; /* Abstand vom rechten Rand */
+    background-color: rgba(68, 68, 68, 0.9); /* Höhere Deckkraft für bessere Sichtbarkeit */
+    border-radius: 5px; /* Abgerundete Ecken */
+    padding: 5px; /* Innenabstand */
+    z-index: 20; /* Höherer Z-Index, damit es über den Bildern liegt */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px; /* Reduziere den Abstand */
+    padding: 5px 10px; /* Innenabstand für Links */
+    display: inline-block; /* Damit der Abstand funktioniert */
+}
+
+nav a:hover {
+    background-color: #555; /* Hintergrundfarbe beim Hover */
+}
+
+
+
+/* Hero-Bereich mit Hintergrundbild */
+.hero {
+    background-image: url('kino_background.jpg');
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero h1 {
+    font-size: 48px; /* Schriftgröße des Haupttitels */
+}
+
+/* Content-Bereich mit flexibler Anordnung */
+.content {
+    display: flex;
+    flex-wrap: wrap; /* Elemente umbrechen, wenn sie zu breit sind */
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Styling für jede Filmkarte */
+.movie {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Banner-Bereich im Header */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 800px; /* Höhe des Banners */
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.banner-images {
+    display: flex;
+    width: 300%; /* Die Breite wird durch Flexbox verteilt */
+    animation: slide 40s linear infinite;
+}
+
+.banner-images img {
+    width: 100%; /* Bilder über die gesamte Breite */
+    height: 800px; /* Höhe der Bilder anpassen */
+    object-fit: cover; /* Bilder im Container anpassen */
+}
+
+/* Animation für das Bild-Slider-Banner */
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Startposition: erste Bildreihe sichtbar */
+    }
+    100% {
+        transform: translateX(-100%); /* Endposition: letzte Bildreihe sichtbar */
+    }
+}
+
+
+/* Kontaktformular Styling */
+.kontakt-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.kontakt-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Formularelemente Styling */
+form {
+    display: flex;
+    flex-direction: column; /* Elemente werden untereinander angezeigt */
+}
+
+form label {
+    margin-top: 10px; /* Abstand oberhalb der Labels */
+    text-align: left;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form input[type="submit"] {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Zusätzliche Stile für responsive Design */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Filme werden untereinander angezeigt */
+        align-items: center;
+    }
+
+    .movie {
+        width: 90%; /* Breitere Filmkarten auf kleineren Bildschirmen */
+    }
+
+    .hero {
+        height: 250px;
+    }
+
+    .hero h1 {
+        font-size: 32px; /* Kleinere Schriftgröße für mobile Geräte */
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kino Website - Kontakt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Kontakt</h1>
+        <nav>
+            <ul>
+                <li><a href="startseite.html">Startseite</a></li>
+                <li><a href="filme.html">Filme</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="kontakt-section">
+        <h2>Kontaktieren Sie uns</h2>
+
+        <div class="kontakt-container">
+            <p>Haben Sie Fragen oder Anregungen? Füllen Sie das untenstehende Formular aus, und wir werden uns so schnell wie möglich bei Ihnen melden.</p>
+            
+            <form action="kontakt.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="betreff">Betreff:</label>
+                <input type="text" id="betreff" name="betreff" required>
+
+                <label for="nachricht">Nachricht:</label>
+                <textarea id="nachricht" name="nachricht" rows="6" required></textarea>
+
+                <input type="submit" value="Nachricht senden">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Kino CineSphere. Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>
