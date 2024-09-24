@@ -59,26 +59,53 @@ nav a:hover {
 /* Content-Bereich mit flexibler Anordnung */
 .content {
     display: flex;
-    flex-wrap: wrap; /* Elemente umbrechen, wenn sie zu breit sind */
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 20px;
 }
 
-/* Styling für jede Filmkarte */
+/* Styling für jede Filmkarte - nur das Bild wird angezeigt */
 .movie {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    padding: 15px;
-    width: 250px;
+    background-color: transparent;
+    border: none;
+    margin: 10px;
+    width: calc(100% / 6 - 20px); /* 6 Bilder in einer Reihe */
+    padding: 0;
     text-align: center;
 }
 
+/* Alle Filmplakate haben dieselbe feste Größe */
 .movie img {
     width: 100%;
-    border-radius: 10px;
+    height: 350px; /* Feste Höhe für die Plakate */
+    border-radius: 5px; /* Abgerundete Ecken */
+    object-fit: cover; /* Skaliert das Bild, ohne es zu verzerren */
 }
+
+/* Entferne den Text */
+.movie h3, .movie p {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .movie {
+        width: calc(100% / 4 - 20px); /* 4 Bilder pro Reihe */
+    }
+}
+
+@media (max-width: 768px) {
+    .movie {
+        width: calc(100% / 3 - 20px); /* 3 Bilder pro Reihe */
+    }
+}
+
+@media (max-width: 480px) {
+    .movie {
+        width: calc(100% / 2 - 20px); /* 2 Bilder pro Reihe */
+    }
+}
+
 
 /* Footer Styling */
 footer {
@@ -103,7 +130,7 @@ footer {
 .banner-images {
     display: flex;
     width: 300%; /* Die Breite wird durch Flexbox verteilt */
-    animation: slide 40s linear infinite;
+    animation: slide 60s linear infinite;
 }
 
 .banner-images img {
@@ -172,22 +199,5 @@ form input[type="submit"]:hover {
     background-color: #555;
 }
 
-/* Zusätzliche Stile für responsive Design */
-@media (max-width: 768px) {
-    .content {
-        flex-direction: column; /* Filme werden untereinander angezeigt */
-        align-items: center;
-    }
 
-    .movie {
-        width: 90%; /* Breitere Filmkarten auf kleineren Bildschirmen */
-    }
 
-    .hero {
-        height: 250px;
-    }
-
-    .hero h1 {
-        font-size: 32px; /* Kleinere Schriftgröße für mobile Geräte */
-    }
-}
