@@ -8,37 +8,35 @@ body {
 
 /* Styling für den Header-Bereich */
 header {
-    background-color: #333;
+    background-color: #2309b6;
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    position: relative;
 }
 
 /* Navigation Styling */
-
 nav {
-    position: absolute; /* Absolute Positionierung innerhalb des Banners */
-    top: 10px; /* Abstand vom oberen Rand */
-    right: 10px; /* Abstand vom rechten Rand */
-    background-color: rgba(68, 68, 68, 0.9); /* Höhere Deckkraft für bessere Sichtbarkeit */
-    border-radius: 5px; /* Abgerundete Ecken */
-    padding: 5px; /* Innenabstand */
-    z-index: 20; /* Höherer Z-Index, damit es über den Bildern liegt */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(68, 68, 68, 0.9);
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 20;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px; /* Reduziere den Abstand */
-    padding: 5px 10px; /* Innenabstand für Links */
-    display: inline-block; /* Damit der Abstand funktioniert */
+    margin: 0 10px;
+    padding: 5px 10px;
+    display: inline-block;
 }
 
 nav a:hover {
-    background-color: #555; /* Hintergrundfarbe beim Hover */
+    background-color: #555;
 }
-
-
 
 /* Hero-Bereich mit Hintergrundbild */
 .hero {
@@ -53,7 +51,49 @@ nav a:hover {
 }
 
 .hero h1 {
-    font-size: 48px; /* Schriftgröße des Haupttitels */
+    font-size: 48px;
+}
+
+/* Banner-Bereich im Header */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+/* Bilder als Slideshow */
+.banner-images {
+    display: flex;
+    width: 300%; /* 3 Bilder, daher 300% */
+    animation: slide 60s linear infinite; /* Animation von links nach rechts */
+}
+
+.banner-images img {
+    width: 33.33%; /* Jedes Bild nimmt 1/3 der Breite ein */
+    height: 800px;
+    object-fit: cover;
+}
+
+/* Animation für das Bild-Slider-Banner */
+@keyframes slide {
+    0% {
+        transform: translateX(0%); /* Startet rechts außerhalb des Viewports */
+    }
+    100% {
+        transform: translateX(-100%); /* Bewegt die Bilder nach links */
+    }
+}
+
+/* Filme-Bereich */
+.filme-section {
+    padding: 20px;
+}
+
+.filme-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* Content-Bereich mit flexibler Anordnung */
@@ -62,93 +102,49 @@ nav a:hover {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
+    gap: 20px;
 }
 
-/* Styling für jede Filmkarte - nur das Bild wird angezeigt */
+/* Styling für jede Filmkarte */
 .movie {
     background-color: transparent;
     border: none;
-    margin: 10px;
-    width: calc(100% / 6 - 20px); /* 6 Bilder in einer Reihe */
-    padding: 0;
+    width: calc(100% / 6 - 20px);
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
-/* Alle Filmplakate haben dieselbe feste Größe */
 .movie img {
     width: 100%;
-    height: 350px; /* Feste Höhe für die Plakate */
-    border-radius: 5px; /* Abgerundete Ecken */
-    object-fit: cover; /* Skaliert das Bild, ohne es zu verzerren */
+    height: 600px;
+    border-radius: 5px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-/* Entferne den Text */
-.movie h3, .movie p {
-    display: none;
+/* Hover-Effekt: Bild leicht vergrößern */
+.movie:hover img {
+    transform: scale(1.05);
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
     .movie {
-        width: calc(100% / 4 - 20px); /* 4 Bilder pro Reihe */
+        width: calc(100% / 4 - 20px);
     }
 }
 
 @media (max-width: 768px) {
     .movie {
-        width: calc(100% / 3 - 20px); /* 3 Bilder pro Reihe */
+        width: calc(100% / 3 - 20px);
     }
 }
 
 @media (max-width: 480px) {
     .movie {
-        width: calc(100% / 2 - 20px); /* 2 Bilder pro Reihe */
+        width: calc(100% / 2 - 20px);
     }
 }
-
-
-/* Footer Styling */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-/* Banner-Bereich im Header */
-.banner {
-    position: relative;
-    width: 100%;
-    height: 800px; /* Höhe des Banners */
-    overflow: hidden;
-    margin-top: 20px;
-}
-
-.banner-images {
-    display: flex;
-    width: 300%; /* Die Breite wird durch Flexbox verteilt */
-    animation: slide 60s linear infinite;
-}
-
-.banner-images img {
-    width: 100%; /* Bilder über die gesamte Breite */
-    height: 800px; /* Höhe der Bilder anpassen */
-    object-fit: cover; /* Bilder im Container anpassen */
-}
-
-/* Animation für das Bild-Slider-Banner */
-@keyframes slide {
-    0% {
-        transform: translateX(0); /* Startposition: erste Bildreihe sichtbar */
-    }
-    100% {
-        transform: translateX(-100%); /* Endposition: letzte Bildreihe sichtbar */
-    }
-}
-
 
 /* Kontaktformular Styling */
 .kontakt-section {
@@ -164,14 +160,13 @@ footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Formularelemente Styling */
 form {
     display: flex;
-    flex-direction: column; /* Elemente werden untereinander angezeigt */
+    flex-direction: column;
 }
 
 form label {
-    margin-top: 10px; /* Abstand oberhalb der Labels */
+    margin-top: 10px;
     text-align: left;
 }
 
@@ -199,5 +194,93 @@ form input[type="submit"]:hover {
     background-color: #555;
 }
 
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
 
+/* Banner Styling */
+#film-banner {
+    position: relative;
+    display: none;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    color: white;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5); /* Halbdurchsichtig für den Textbereich */
+}
 
+#film-banner.show {
+    display: block;
+}
+
+#film-banner h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#film-banner .details {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#film-banner .details p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+#film-banner .trailer {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#film-banner .trailer:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.dates {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.date {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+}
+
+/* Styles für den Schließen-Button */
+.close-banner {
+    cursor: pointer;
+    background: none; /* Kein Hintergrund */
+    border: none; /* Kein Rahmen */
+    position: absolute; /* Absolute Positionierung */
+    top: 10px; /* Abstand vom oberen Rand */
+    right: 10px; /* Abstand vom rechten Rand */
+    font-size: 20px; /* Größe des Symbols */
+    color: white; /* Farbe des Symbols (kann angepasst werden) */
+    z-index: 10; /* Damit der Button über anderen Inhalten liegt */
+}

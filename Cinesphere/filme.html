@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kino Website - Filme</title>
-    <link rel="stylesheet" href="filme.css">
+    <link rel="stylesheet" href="style.css">
     
     <style>
         .film img {
             width: 200px;
             height: 300px;
             object-fit: cover;
+        }
+        /* Styles für den Banner und den Schließen-Button */
+        #film-banner {
+            position: relative; /* Damit der Button relativ zum Banner positioniert werden kann */
+        }
+
+        .close-banner {
+            cursor: pointer;
+            background: none; /* Kein Hintergrund */
+            border: none; /* Kein Rahmen */
+            position: absolute; /* Absolute Positionierung */
+            top: 10px; /* Abstand vom oberen Rand */
+            right: 10px; /* Abstand vom rechten Rand */
+            font-size: 20px; /* Größe des Symbols */
+            color: white; /* Farbe des Symbols (kann angepasst werden) */
+            z-index: 10; /* Damit der Button über anderen Inhalten liegt */
         }
     </style>
 </head>
@@ -20,16 +36,16 @@
     <header>
         <h1>Willkommen im Kino CineSphere</h1>
        
-            <nav>
-                <a href="startseite.html">Home</a>
-                <a href="filme.html">Filme</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
+        <nav>
+            <a href="startseite.html">Home</a>
+            <a href="filme.html">Filme</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
         
     </header>
 
     <section class="filme-section">
-        <h2>Aktuelle Filme</h2>
+        <h2>Aktuelles Programm</h2>
 
         <div class="content">
             <div class="movie">
@@ -50,19 +66,69 @@
             <div class="movie">
                 <img src="Filmplakate/proxy-image.jpeg" alt="Film 6">
             </div>
-            div class="movie">
+            <div class="movie">
                 <img src="Filmplakate/proxy-image (1).jpeg" alt="Film 7">
             </div>
-            div class="movie">
+            <div class="movie">
                 <img src="Filmplakate/proxy-image (2).jpeg" alt="Film 8">
+            </div>
+            <div class="movie">
+                <img src="Filmplakate/1f17d51b79b5066739a4d9ac52416800.jpg" alt="Film 9">
+            </div>
+            <div class="movie">
+                <img src="Filmplakate/21ba0ebd893822c705e0edbd41ed7b8c.jpg" alt="Film 10">
+            </div>
+            <div class="movie">
+                <img src="Filmplakate/38b699e8947ba1cc3605d01c68a3cf71.jpg" alt="Film 11">
+            </div>
+            <div class="movie">
+                <img src="Filmplakate/cc2e207643a87deaa5b71d6ed9f4679c.jpg" alt="Film 12">
             </div>
         </div>
         
+    </section>
 
+    <!-- Neues Banner -->
+    <section id="film-banner" style="display: none;">
+        <button class="close-banner" aria-label="Schließen" title="Schließen" style="cursor: pointer; background: none; border: none; position: absolute; top: 10px; right: 10px; font-size: 20px;">&times;</button>
+        <div class="banner-content">
+            <h2 id="film-title">Filmtitel</h2>
+            <p id="film-description">Kurze Beschreibung des Films...</p>
+            <p id="film-genre">Genre: Drama, Sci-Fi</p>
+            <p id="film-rating">FSK: 12</p>
+            <p id="film-duration">Dauer: 169 Minuten</p>
+
+            <!-- Zeitplan -->
+            <div class="schedule">
+                <h3>Uhrzeit Auswählen</h3>
+                <div class="dates">
+                    <div class="date">
+                        <p>Heute</p>
+                        <p>19:15 (IMAX 2D, Englisch)</p>
+                    </div>
+                    <div class="date">
+                        <p>Fr., 27.9.</p>
+                        <p>19:30 (IMAX 2D, Englisch)</p>
+                    </div>
+                    <div class="date">
+                        <p>Sa., 28.9.</p>
+                        <p>16:00 (IMAX 2D, Englisch)</p>
+                    </div>
+                    <div class="date">
+                        <p>So., 29.9.</p>
+                        <p>12:00 (IMAX 2D, Englisch)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2024 Kino CineSphere. Alle Rechte vorbehalten</p>
     </footer>
+
+    <!-- Verlinkung auf die JavaScript-Datei -->
+    <script src="script.js"></script>
 
 </body>
 </html>
